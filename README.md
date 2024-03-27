@@ -1,3 +1,4 @@
+![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=drive-images-embed) [![CodeQL](https://github.com/igorradovanov/Drive-Images-Embed/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/igorradovanov/Drive-Images-Embed/actions/workflows/github-code-scanning/codeql)
 # Google Drive Image Embedder
 
 This is a React application that allows you to generate embed codes for Google Drive photos.
