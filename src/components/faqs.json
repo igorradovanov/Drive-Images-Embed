@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What is this app?",
+    "answer": "This app allows you to generate embed codes for Google Drive photos."
+  },
+  {
+    "id": 2,
+    "question": "How do I use it?",
+    "answer": "Paste your Google Drive image public link in the input field and click 'Generate'."
+  },
+  {
+    "id": 3,
+    "question": "How do I get the public link?",
+    "answer": "Right-click on the image in Google Drive and select 'Get link'."
+  },
+  {
+    "id": 4,
+    "question": "What can I do with the embed codes?",
+    "answer": "You can use the HTML code in your website and the Markdown code in your markdown files."
+  },
+  {
+    "id": 5,
+    "question": "Is this app open source?",
+    "answer": "Yes! You can find the code on GitHub."
+  },
+  {
+    "id": 6,
+    "question": "How can I contribute?",
+    "answer": "You can contribute by submitting pull requests on GitHub."
+  },
+  {
+    "id": 7,
+    "question": "Do you see the images I generate?",
+    "answer": "No, this app operates solely on the client side and does not transmit any data to servers. Furthermore, we do not employ any tracking mechanisms, such as Google Analytics. To learn more, you can review the app's code"
+  },
+  {
+    "id": 8,
+    "question": "Can I use this app offline?",
+    "answer": "Yes, you can download the app from GitHub and run it locally."
+  },
+  {
+    "id": 9,
+    "question": "Terms of Service",
+    "answer": "This app is provided as is, without any warranty. By using this app, you agree to the terms of service."
+  },
+  {
+    "id": 10,
+    "question": "Privacy Policy",
+    "answer": "This app does not collect any personal data. By using this app, you agree to the privacy policy."
+  }
+]
