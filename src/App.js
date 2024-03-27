@@ -15,7 +15,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FAQModal from "./components/FAQModal";
 import EmbedCodes from "./components/EmbedCodes";
+import GithubCorner from "react-github-corner";
 
+/**
+ * The main component of the application.
+ * Renders the Google Drive photo embedding functionality.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 function App() {
   const [link, setLink] = useState("");
   const [id, setId] = useState("");
@@ -45,6 +52,7 @@ function App() {
 
   return (
     <Center h="100vh" w="100vw">
+      <GithubCorner href="https://github.com/igorradovanov/Drive-Images-Embed" />
       <ToastContainer />
       <VStack spacing={4}>
         <Text fontSize="xl">Embed Google Drive Photos Easily</Text>
