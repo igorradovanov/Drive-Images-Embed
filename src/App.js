@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import FAQModal from "./components/FAQModal";
 import EmbedCodes from "./components/EmbedCodes";
 import GithubCorner from "react-github-corner";
+import ToggleThemeButton from "./components/ToggleThemeButton";
 
 /**
  * The main component of the application.
@@ -55,6 +56,7 @@ function App() {
       <GithubCorner href="https://github.com/igorradovanov/Drive-Images-Embed" />
       <ToastContainer />
       <VStack spacing={4}>
+        <ToggleThemeButton />
         <Text fontSize="xl">Embed Google Drive Photos Easily</Text>
         <Text fontSize="md">
           Paste your Google Drive link below to generate embed codes.
