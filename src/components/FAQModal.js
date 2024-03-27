@@ -17,6 +17,14 @@ import {
 } from "@chakra-ui/react";
 import faqs from "./faqs.json";
 
+/**
+ * Renders a modal component displaying frequently asked questions.
+ *
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isOpen - Indicates whether the modal is open or closed.
+ * @param {Function} props.onClose - The function to be called when the modal is closed.
+ * @returns {JSX.Element} The FAQModal component.
+ */
 function FAQModal({ isOpen, onClose }) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

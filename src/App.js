@@ -17,6 +17,12 @@ import FAQModal from "./components/FAQModal";
 import EmbedCodes from "./components/EmbedCodes";
 import GithubCorner from "react-github-corner";
 
+/**
+ * The main component of the application.
+ * Renders the Google Drive photo embedding functionality.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 function App() {
   const [link, setLink] = useState("");
   const [id, setId] = useState("");
