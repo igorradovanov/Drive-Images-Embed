@@ -11,12 +11,12 @@ import {
   useDisclosure,
   Badge,
 } from "@chakra-ui/react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import FAQModal from "./components/FAQModal";
 import EmbedCodes from "./components/EmbedCodes";
 import GithubCorner from "react-github-corner";
 import ToggleThemeButton from "./components/ToggleThemeButton";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { useToast } from "@chakra-ui/react";
 
 /**
  * The main component of the application.
@@ -27,6 +27,7 @@ import ToggleThemeButton from "./components/ToggleThemeButton";
 function App() {
   const [link, setLink] = useState("");
   const [id, setId] = useState("");
+  const toast = useToast();
   const { onCopy: onCopyHTML } = useClipboard(
     `<img src="https://lh3.googleusercontent.com/d/${id}">`
   );
@@ -45,17 +46,28 @@ function App() {
     const extractedId = extractId(link);
     setId(extractedId);
     if (!extractedId) {
-      toast.error("Invalid Google Drive link!");
+      toast({
+        title: "Invalid Google Drive link!",
+        position: "bottom-right",
+        status: "error",
+        isClosable: true,
+        duration: 3000,
+      });
     } else {
-      toast.success("Embed codes generated successfully!");
+      toast({
+        title: "Embed codes generated!",
+        position: "bottom-right",
+        status: "success",
+        isClosable: true,
+        duration: 3000,
+      });
     }
   };
 
   return (
-    <Center h="100vh" w="100vw">
+    <Center h="100vh" w="100vw" padding={5}>
       <GithubCorner href="https://github.com/igorradovanov/Drive-Images-Embed" />
-      <ToastContainer />
-      <VStack spacing={4}>
+      <VStack spacing={4} w={[300, 400, 500]}>
         <ToggleThemeButton />
         <Text fontSize="xl">Embed Google Drive Photos Easily</Text>
         <Text fontSize="md">
@@ -69,9 +81,13 @@ function App() {
             value={link}
             mr={2}
             onChange={(e) => setLink(e.target.value)}
-            width={400}
+            width={["200px", "300px", "400px"]}
           />
-          <Button colorScheme="blue" onClick={generateEmbedCodes}>
+          <Button
+            rightIcon={<ArrowForwardIcon />}
+            colorScheme="blue"
+            onClick={generateEmbedCodes}
+          >
             Generate
           </Button>
         </Flex>
@@ -93,7 +109,7 @@ function App() {
           >
             API Coming Soon
           </Badge>
-          <Text fontSize="s">
+          <Text fontSize="12px">
             ❤️ This project is open source. Submit your ideas on{" "}
             <a href="https://github.com/igorradovanov/Drive-Images-Embed">
               <u>GitHub</u>

@@ -12,7 +12,7 @@ import { Box, Button, Text, VStack } from "@chakra-ui/react";
  */
 function EmbedCodes({ id, onCopyHTML, onCopyMarkdown }) {
   return (
-    <VStack spacing={2}>
+    <VStack spacing={2} width={["200px", "300px", "1200px"]}>
       <Box>
         <Text as="code">
           &lt;img src=&quot;https://lh3.googleusercontent.com/d/{id}&quot;&gt;
