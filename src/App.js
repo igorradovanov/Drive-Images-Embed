@@ -4,19 +4,20 @@ import {
   Button,
   Input,
   Text,
-  useClipboard,
   Flex,
   Center,
   VStack,
   useDisclosure,
   Badge,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import FAQModal from "./components/FAQModal";
 import EmbedCodes from "./components/EmbedCodes";
 import GithubCorner from "react-github-corner";
 import ToggleThemeButton from "./components/ToggleThemeButton";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, ChatIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/react";
+import AdvancedOptions from "./components/AdvancedOptions";
 
 /**
  * The main component of the application.
@@ -27,13 +28,10 @@ import { useToast } from "@chakra-ui/react";
 function App() {
   const [link, setLink] = useState("");
   const [id, setId] = useState("");
+  const [alt, setAlt] = useState("");
+  const [height, setHeight] = useState("");
+  const [width, setWidth] = useState("");
   const toast = useToast();
-  const { onCopy: onCopyHTML } = useClipboard(
-    `<img src="https://lh3.googleusercontent.com/d/${id}">`
-  );
-  const { onCopy: onCopyMarkdown } = useClipboard(
-    `![Image](https://lh3.googleusercontent.com/d/${id})`
-  );
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const extractId = (url) => {
@@ -73,8 +71,22 @@ function App() {
         <Text fontSize="md">
           Paste your Google Drive link below to generate embed codes.
         </Text>
-        <Button onClick={onOpen}>Open FAQ</Button>
-        <FAQModal isOpen={isOpen} onClose={onClose} />
+        <SimpleGrid columns={2} spacing={2}>
+          <Button
+            leftIcon={<ChatIcon />}
+            colorScheme="blue"
+            variant={"solid"}
+            onClick={onOpen}
+          >
+            Open FAQ
+          </Button>
+          <FAQModal isOpen={isOpen} onClose={onClose} />
+          <AdvancedOptions
+            setAlt={setAlt}
+            setHeight={setHeight}
+            setWidth={setWidth}
+          />
+        </SimpleGrid>
         <Flex>
           <Input
             placeholder="Google Drive Link"
@@ -85,19 +97,13 @@ function App() {
           />
           <Button
             rightIcon={<ArrowForwardIcon />}
-            colorScheme="blue"
+            colorScheme="green"
             onClick={generateEmbedCodes}
           >
             Generate
           </Button>
         </Flex>
-        {id && (
-          <EmbedCodes
-            id={id}
-            onCopyHTML={onCopyHTML}
-            onCopyMarkdown={onCopyMarkdown}
-          />
-        )}
+        {id && <EmbedCodes alt={alt} height={height} width={width} id={id} />}
         <Box position="fixed" bottom="0" width="100%" textAlign="center" pb={4}>
           <Badge
             colorScheme="gray"
