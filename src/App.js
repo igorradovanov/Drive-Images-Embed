@@ -85,6 +85,9 @@ function App() {
             setAlt={setAlt}
             setHeight={setHeight}
             setWidth={setWidth}
+            alt={alt}
+            height={height}
+            width={width}
           />
         </SimpleGrid>
         <Flex>

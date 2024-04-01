@@ -37,7 +37,7 @@ function EmbedCodes({ id, alt, height, width }) {
       <Box>
         <Text as="code">
           !{alt ? `[${alt}]` : "[Image]"}(https://lh3.googleusercontent.com/d/
-          {id}
+          {id})
         </Text>
         <Button onClick={() => onCopyMarkdown()} ml={2}>
           Copy Markdown

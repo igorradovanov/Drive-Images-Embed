@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 
-function AdvancedOptions({ setAlt, setHeight, setWidth }) {
+function AdvancedOptions({ setAlt, setHeight, setWidth, alt, height, width }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -61,6 +61,7 @@ function AdvancedOptions({ setAlt, setHeight, setWidth }) {
                 mb={2}
                 placeholder="Example: Masterpiece"
                 onChange={handleAltChange}
+                value={alt}
               />
             </FormControl>
             <FormControl>
@@ -71,6 +72,7 @@ function AdvancedOptions({ setAlt, setHeight, setWidth }) {
                 type="number"
                 placeholder="Example: 500"
                 onChange={handleHeightChange}
+                value={height}
               />
             </FormControl>
             <FormControl>
@@ -81,6 +83,7 @@ function AdvancedOptions({ setAlt, setHeight, setWidth }) {
                 type="number"
                 placeholder="Example: 250"
                 onChange={handleWidthChange}
+                value={width}
               />
             </FormControl>
           </DrawerBody>
