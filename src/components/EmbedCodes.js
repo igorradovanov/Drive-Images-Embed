@@ -17,14 +17,12 @@ function EmbedCodes({ id, alt, height, width }) {
     }${height ? ` height="${height}"` : ""}${width ? ` width="${width}"` : ""}>`
   );
   const { onCopy: onCopyMarkdown } = useClipboard(
-    `!${
-      alt ? `[${alt}]` : "[Image]"
-    }(https://lh3.googleusercontent.com/d/${id})`
+    `!${alt ? `[${alt}]` : "[Image]"}(https://lh.googleusercontent.com/d/${id})`
   );
   return (
     <VStack spacing={2} width={["200px", "300px", "1200px"]}>
       <Box>
-        <Text as="code">
+        <Text as="code" data-testid="output">
           &lt;img src=&quot;https://lh3.googleusercontent.com/d/{id}&quot;
           {alt && ` alt="${alt}"`}
           {height && ` height="${height}"`}
